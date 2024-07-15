@@ -1,10 +1,38 @@
-// Напишіть цикл (for), який виведе в консоль усі парні числа від max до min включно по зменшенню.
+// Є o6'єкт, у якому зберігаються обрані товари у кошику.
+// Напишіть код для визначення загальної суми замовлення і збережіть його результат у змінній totaLCost.
+// Якщо об'єкт cart порожній, то результат має бути 0.
 
-const max = 50;
-const min = 23;
+const cart = {
+    apple: 50,
+    banana: 30,
+    orange: 40,
+};
 
-for (let i = max; i >= min; i--) {
-    if (i % 2 === 0) {
-        console.log(i);
-    }    
+
+
+// version 1
+console.log(cart);
+
+let totaLCost = 0;
+
+for (const value of Object.values(cart)) {
+    totaLCost += value;
 }
+
+console.log(totaLCost);
+
+
+// version 2
+function total(obj) {
+    console.log(cart);
+
+    let totaLCost = 0;
+
+    for (const value of Object.values(obj)) {
+        totaLCost += value;
+    }
+
+    return totaLCost;
+}
+
+console.log(total(cart));

@@ -1,13 +1,15 @@
-// =====Функція для визначення типу змінної=====
+// Напишіть функцію, яка створює масив з вказаною довжиною і заповнює його вказанним значенням.
+// Наприклад, функція fillArray(З, 'а') повертає масив ['а', 'а', 'а'].
 
-// Написати функцію для визначення типу змінної.
-// Функція отримує будь-яке значення в якості аргументу і визначає тип цієї змінної.
-// Виведіть в консоль повідомлення "Тип змінної: type"
 
-function typeOfVariable(variable) {
-  return `Тип змінної: ${typeof variable}`;
+function fillArray(times, value) {
+  let array = [];
+  for (let i = 0; i < times; i++) {
+    array.push(value);
+  }
+  return array;
 }
 
-console.log(typeOfVariable('Ukraine'));
-console.log(typeOfVariable(1994));
-console.log(typeOfVariable(true));
+console.log(fillArray(3, 'a'));
+console.log(fillArray(5, 5));
+console.log(fillArray(2, true));

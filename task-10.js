@@ -1,14 +1,16 @@
-// За допомогою циклу (for) знайдіть суму всіх непарних чисел у проміжку від min до max включно.
+// Розрахувати загальну суму всіх замовлень та вивести інформацію у форматі:
+// 'Загальна сума всіх замовлень: totalAmount'
 
-const min = 0;
-const max = 50;
+const orders = [
+{ id: 1, product: 'Футболки', quantity: 2, price: 15 },
+{ id: 2, product: 'Шорти', quantity: 3, price: 20 },
+{ id: 3, product: 'Кросівки', quantity: 1, price: 50 }
+];
 
-let sum = 0;
+let totalAmount = 0;
 
-for (let i = min; i <= max; i++) {
-    if (!(i % 2 === 0)) {
-        sum += i;
-    }    
+for (const order of orders) {
+    totalAmount += (order.quantity * order.price)
 }
 
-console.log(sum);
+console.log(`Загальна сума всіх замовлень: ${totalAmount}`);

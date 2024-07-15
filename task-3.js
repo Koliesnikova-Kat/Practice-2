@@ -1,39 +1,29 @@
-// Оголоси функцію hasDiscount(age, isStudent, isPensioner),
-// яка перевіряє, чи покупець має право на знижку, і повертає true - якщо має право на знижку, і false - якщо не має.
-// Покупець має право на знижку, якщо він є студентом або пенсміонером, або якщо його вік 12-18 років включно.
-// Значення параметрів будуть задаватися під час виклику функції:
-// age - вік покупця;
-// isStudent - буль (показує чи є покупець студентом);
-// isPensioner - буль (показує чи є покупець пенсіонером).
+// Напиши скрипт, який порівняє два масива і виведе у консоль результат: true - якщо всі елементи однакові і false - в іншому випадку
 
-function hasDiscount(age, isStudent, isPensioner) {
-  if (isStudent === true) {
+const arr1 = [1, 4, 6, 'color', 324, 232, 'list', 11, 9, 'dream', 34, 0, -30]; 
+const arr2 = [6, 'dream', -30, 11, 9, 1, 324, 34, 'color', 4, 232, 0, 'list'];
+const arr3 = [4, 232, 6, -30, 'color', 324, 'list', 1, 11, 9, 'dream', 34, 0];
+const arr4 = ['color', 6, -30, 11, 9, 1, 'dream', 324, 34, 4, 232, 0, 'list'];
+const arr5 = [1, 4, 6, 'color', 'list', 11, 9, 'dream', 34, 0, -30, 'lesson'];
+const arr6 = [6, 324, 'dream', -30, 9, 8, 34, 'color', 4, 232, 0, 'list', 11];
+const arr7 = [1, 4, 6, 'color', 324, 232, 'list', 11, 9, 'dream', 34, 0, -30];
+const arr8 = [6, 'dream', -30, 10, 9, 1, 324, 34, 'color', 4, 232, 0, 'list'];
+
+
+function arrayCompare(array1, array2) {
+    if (array1.length !== array2.length) {
+        return false;
+    }
+    for (const element of array1) {
+        if (!array2.includes(element)) {
+            return false;
+        }
+    }
     return true;
-  } else if (isPensioner === true) {
-    return true;
-  } else if (age >= 12 && age <= 18) {
-    return true;
-  } else {
-    return false;
-  }
 }
 
-console.log(hasDiscount(12, false, false));
-console.log(hasDiscount(19, true, false));
-console.log(hasDiscount(70, false, true));
-console.log(hasDiscount(30, false, false));
-console.log(hasDiscount(30, false, false));
-
-
-
-
-
-function hasDiscount(age, isStudent, isPensioner) {
-  return (age >= 12 && age <= 18) || isStudent || isPensioner;
-}
-
-console.log(hasDiscount(12, false, false));
-console.log(hasDiscount(19, true, false));
-console.log(hasDiscount(70, false, true));
-console.log(hasDiscount(30, false, false));
-console.log(hasDiscount(10, false, false));
+console.log(arrayCompare(arr1, arr2));
+console.log(arrayCompare(arr3, arr4));
+console.log(arrayCompare(arr5, arr6));
+console.log(arrayCompare(arr7, arr8));
+console.log(arrayCompare(arr1, arr8));

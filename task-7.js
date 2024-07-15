@@ -1,16 +1,16 @@
-// Оголоси функцію checkString(value), яка перевіряє, чи отримане значення є рядком і не міститть символ $.
-// Якщо це так, вивести кількість символів у рядку.
-// Якщо значення не є рядком, вивести повідомлення про невірний ввід.
+// Додати метод getinfo в об'єкт user, який повертатиме інформацію про користувача у форматі:
+// `Name: Peter. Surname: Parker. Age: 16. Position: Spiderman.`
 
-function checkString(value) {
-    if (typeof value === 'string' && !value.includes('$')) {
-        return `Кількість символів у рядку: ${value.length}`;
-    } else {
-        return 'Invalid input!';
-    }
+const user = {
+    name: 'Peter',
+    surname: 'Parker',
+    age: 16,
+    position: 'Spiderman',
+};
+
+user.getInfo = function() {
+    return `Name: ${this.name}. Surname: ${this.surname}. Age: ${this.age}. Position: ${this.position}.`;
 }
 
-console.log(checkString('Ukraine'));
-console.log(checkString(5));
-console.log(checkString('2024'));
-console.log(checkString('Ukraine$'));
+console.log(user);
+console.log(user.getInfo());

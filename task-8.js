@@ -1,18 +1,22 @@
-// Оголоси функцію isEvenNumber(number), яка перевіряє за допомогою тернарного оператора чи отримане значення є парним числом.
-// І виводить відповідне повідомлення: 'Число парне' або 'Число непарне'.
-// Якщо функція отримує не число, вивести повідомлення 'Невалідне значення!'
+// Створіть об'єкт calculator із трьома методами:
+// read(a, b) - приймає два аргументи та зберігає їх як властивості об'єкта;
+// sum() - повертає суму збережених значень;
+// mult() - перемножує збережені значення та повертає результат.
 
-function isEvenNumber(number) {
-    if (typeof number === 'number') {
-        return (number % 2 === 0) ? 'Число парне' : 'Число непарне';
-    } else {
-        return 'Невалідне значення!';
-    }
+const calculator = {
+    read(a, b) {
+        this.arg1 = a;
+        this.arg2 = b;
+    },
+    sum() {
+        return this.arg1 + this.arg2;
+    },
+    mult() {
+        return this.arg1 * this.arg2;
+    },
 }
 
-console.log(isEvenNumber(2));
-console.log(isEvenNumber('Ukraine'));
-console.log(isEvenNumber(3));
-console.log(isEvenNumber('0'));
-console.log(isEvenNumber(0));
-console.log(isEvenNumber(true));
+calculator.read(2, 3);
+console.log(calculator);
+console.log(calculator.sum());
+console.log(calculator.mult());

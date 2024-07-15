@@ -1,15 +1,20 @@
-// Оголоси функцію canRegisterOnSite(age, hasAcceptedTerms), яка перевіряє, чи може користувач зареструватися на сайті,
-// і повертає true - якщо може зареєструватись, і false - якщо не може.
-// Користувач може зареєструватись, якщо йому виповнилося 13 років, і він прийняв умови використання.
-// Значення параметрів будуть задаватися під час виклику функції:
-// age - вік користувача;
-// hasAcceptedTerms - буль (показує, чи прийняв користувач умови користування).
+// Напишіть функцію calculateAverage(), яка приймає довільну кількість аргументів і повертає їхнє середнє значення
+// Додати перевірку, що аргумемти - це числа.
 
-function canRegisterOnSite(age, hasAcceptedTerms) {
-    return age >= 13 && hasAcceptedTerms;
+
+function calculateAverage(...args) {
+    let sum = 0;
+    let count = 0;
+    for (const argument of args) {
+        if (typeof argument === 'number') {
+            sum += argument;
+            count += 1;
+        }
+    }    
+    return sum / count;
 }
 
-console.log(canRegisterOnSite(12, false));
-console.log(canRegisterOnSite(12, true));
-console.log(canRegisterOnSite(15, false));
-console.log(canRegisterOnSite(15, true));
+console.log(calculateAverage(12, 14));
+console.log(calculateAverage(1, 2, 'number', 5));
+console.log(calculateAverage(15, 3, false));
+console.log(calculateAverage(19, 23, '2'));

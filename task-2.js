@@ -1,9 +1,31 @@
-// Написати функцію для обчислення довжини рядка.
-// Функція отримує рядок в якості аргументу і виводить в консоль повідомлення:
-// "Довжина рядка length"
+// Написати функцію сlearArray(array), котра створить новий масив, в якому не буде значень, які призводяться до false.
 
-function lengthOfString(stringLength) {
-  return `Довжина рядка: ${stringLength.length} символів`;
+const array = [
+    1,
+    0,
+    54,
+    'doc',
+    null,
+    'jpg',
+    undefined,
+    '',
+    'png',
+    'exe',
+    false,
+    'mp4',
+    NaN,
+    'hbs',
+];
+
+
+function clearArray(array) {
+    const newArray = [];
+    for (const part of array) {
+        if (part) {
+        newArray.push(part);
+        }
+    }
+    return newArray;
 }
 
-console.log(lengthOfString('Ukraine'));
+console.log(clearArray(array));
